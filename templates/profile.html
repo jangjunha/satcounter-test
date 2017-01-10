@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+	<h3>{{ user.username }}의 프로필</h3>
+	<ul class="comments">
+	{% for comment in user.messages %}
+		<li>
+			<h4 class="writer">{{ comment.writer.username }}:</h4>
+			<p class="content">{{ comment.content }}</p>
+		</li>
+	{% endfor %}
+	</ul>
+{% endblock %}
